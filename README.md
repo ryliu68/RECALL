@@ -29,7 +29,7 @@ Recent advances in image generation models (IGMs), particularly diffusion-based 
 ```
 
 ### Run RECALL
-```CUDA_VISIBLE_DEVICES=0 python -W ignore -u igmu_attack.py --concept nudity --unlearn_method ESD``` 
+```CUDA_VISIBLE_DEVICES=0 python -W ignore -u attack.py --concept nudity --unlearn_method ESD``` 
 
 ---
 --concept accepts one of the following: ["nudity", "style_vangogh", "object_church", "object_parachute"]
