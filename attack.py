@@ -169,7 +169,7 @@ def main(args):
     pathlib.Path(F"{saved_path}/adv_noise").mkdir(parents=True, exist_ok=True)
     pathlib.Path(F"{saved_path}/gen_img").mkdir(parents=True, exist_ok=True)
 
-    shutil.copy("igmu_attack.py", F"{saved_path}/code.py")
+    shutil.copy("attack.py", F"{saved_path}/code.py")
 
     args.saved_path = saved_path
 
