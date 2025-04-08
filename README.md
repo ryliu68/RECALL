@@ -4,7 +4,7 @@
 
 ## Introduction
 
-This repository contains the PyTorch implementation for the paper [RECALL: Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning]().
+This repository contains the PyTorch implementation for the paper "RECALL: Image Can Bring Your Memory Back: A Novel Multi-Modal Guided Attack against Image Generation Model Unlearning".
 
 <div align='center'>
       <img src = 'assets/framework.png'>
