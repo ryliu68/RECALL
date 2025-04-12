@@ -11,11 +11,7 @@ from PIL import Image, ImageDraw
 from models import SDAModel
 from evaluater import Evaluator
 from util import set_seed, multidict
-import torchvision.transforms as transforms
-import json
 from data.datasets import PNGImageDataset
-import numpy as np
-import copy
 import shutil
 import time
 
@@ -89,7 +85,7 @@ def pgd_attack_with_momentum(args, pipe_attack):
 
     Args:
         args: contains prompt_embeds, init_latents, iter, lr, blance, set_each_step
-        pipe_attack: provides get_loss_adv_v1 and sampled_t
+        pipe_attack: provides get_loss_adv and sampled_t
 
     Returns:
         adv_latents: list of adversarial latents
@@ -229,7 +225,7 @@ def main(args):
 
         time_start = time.perf_counter()
 
-        #  test init attacted or not START
+        #  test init attacked or not START
         with torch.no_grad():
             image_nat, _ = pipe_attack.gen_image_ti2i_infer(
                 prompt_embeds=args.prompt_embeds,
@@ -280,7 +276,7 @@ def main(args):
             adv_latents_save_name = os.path.join(saved_path, "adv_latents", "adv_latents_"+str(idx)+".pth")
             torch.save(adv_latents, adv_latents_save_name)
 
-        #  test init attacted or not END
+        #  test init attacked or not END
         time_end = time.perf_counter()
 
         time_eplase = time_end-time_start
@@ -339,12 +335,11 @@ def main(args):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="args for SD attack")
+    parser = argparse.ArgumentParser(description="args for RECALL attack")
     parser.add_argument("--iter", type=int, default=20, required=False)
     parser.add_argument("--interval", type=int, default=5)
     parser.add_argument("--blance", type=float, default=0.25)
     parser.add_argument("--lr", type=float, default=0.001)
-    parser.add_argument("-grad_acc", "--grad_accumulation_steps", type=int, default=4)
     parser.add_argument("--save_path", type=str, default="./results")
     parser.add_argument('-s', "--seed", type=int, default=2025, required=False)
     parser.add_argument('-n', "--num_inference_steps", type=int, default=50, required=False)

@@ -8,8 +8,7 @@ from copy import deepcopy
 import torchvision.transforms as T
 
 import json
-import socket
-from typing import Any, Callable, Dict, List, Optional, Union, Tuple
+from typing import List, Optional, Union, Tuple
 
 
 from utils import CustomTextEncoder, ckpt_set, GEGLU, NeuronRemover, inject_eraser

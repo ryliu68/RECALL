@@ -1,6 +1,6 @@
 from utils.metrics.nudenet import NudeDetector
 from utils.metrics.style_eval import style_eval, style_classifier
-from utils.metrics.object_eval import imagenet_ResNet50, imagenet_ViT, object_eval
+from utils.metrics.object_eval import imagenet_ResNet50, object_eval
 import os
 from uuid import uuid4
 import pathlib
