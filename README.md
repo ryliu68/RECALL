@@ -1,6 +1,6 @@
 # RECALL
 
-**WARNING: This repository contains model outputs that may be offensive in nature.**
+**WARNING: This repository contains data or model outputs that may be offensive in nature.**
 
 ## Introduction
 
